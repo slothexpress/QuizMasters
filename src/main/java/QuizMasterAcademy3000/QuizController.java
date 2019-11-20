@@ -13,9 +13,10 @@ import javax.servlet.http.HttpSession;
 @Controller
 public class QuizController {
 
+    Repository repo = new Repository();
     @GetMapping("/play")
     String home(HttpSession session) {
-        Question q = QuizService.startPlay();
+        Question q = QuizService.startPlay(repo);
         session.setAttribute("question", q);
         return "play";
     }
@@ -23,8 +24,10 @@ public class QuizController {
     @PostMapping("/play")
     String answer(HttpSession session, Model model, @RequestParam String answer) {
         Question q = (Question)session.getAttribute("question");
+        System.out.println("Svaret från användaren: " + answer);
         if (QuizService.checkAnswer(q, answer)) {
             model.addAttribute("answer", "correct");
+            System.out.println("Poängen: " + QuizService.getPoints());
         } else {
             model.addAttribute("answer", "wrong");
         }

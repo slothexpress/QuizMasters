@@ -4,7 +4,7 @@ public class QuizService {
 
     private static int points = 0;
 
-    public int getPoints() {
+    public static int getPoints() {
         return points;
     }
 
@@ -12,9 +12,7 @@ public class QuizService {
         this.points = points;
     }
 
-    public static Question startPlay() {
-        Repository repo = new Repository();
-        repo.addQuestions();
+    public static Question startPlay(Repository repo) {
         Question q = repo.generateRandomQuestion();
         return q;
     }

@@ -8,6 +8,10 @@ public class Repository {
     private List<Question>questionList = new ArrayList<>();
     private List<Question>askedQuestionList = new ArrayList<>();
 
+    public Repository() {
+        addQuestions();
+    }
+
     public void addQuestions() {
         String question1Question = "Vilken är Sveriges huvudstad?";
         String question1A1 = "Stockholm";
