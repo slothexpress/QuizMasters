@@ -1,7 +1,28 @@
 
 h1 {
     text-align: center;
-    font-family: 'Times New Roman', Times, serif;
+    font-family: fantasy;
+}
+
+p {
+    text-align:center;
+}
+
+
+.jumbotron {
+    color: #eeeee;
+    background-color: #dac463;
+}
+
+img {
+
+}
+
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
 }
 
 
