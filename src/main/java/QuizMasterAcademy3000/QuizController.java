@@ -16,7 +16,7 @@ public class QuizController {
     Repository repo = new Repository();
 
     @GetMapping("/play")
-    String home(HttpSession session) {
+    String home(HttpSession session, Model model) {
         //Question q = new Question("","","","","","");
 //        if ((repo.getQuestionList().size()) == 0) {
 //            repo = new Repository();
@@ -26,6 +26,7 @@ public class QuizController {
         System.out.println("Frågor kvar " + repo.getQuestionList().size());
 
         if(q==null) {
+            model.addAttribute("points", QuizService.getPoints());
             repo = new Repository();
             return "end";
 
