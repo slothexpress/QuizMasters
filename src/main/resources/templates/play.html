@@ -14,11 +14,32 @@
 
 <h1>TEST PLAY</h1>
 
+<!-- Samis fantastic progress bars-->
 
 <div class="progress">
-    <div class="progress-bar progress-bar-striped bg-info" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+    <div class="progress-bar progress-bar-striped bg-info" role="progressbar" style="width: 25%" aria-valuemin="0" aria-valuemax="100"></div>
 </div>
 
+<br>
+
+<div class="progress">
+    <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 50%"></div>
+</div>
+
+
+<br>
+
+<div class="progress">
+    <div class="progress-bar progress-bar-striped bg-info progress-bar-animated" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 75%"></div>
+</div>
+
+
+
+<!-- END OF fantastic progress bars-->
+
+
+<form action="play" method="post">
+<p th:text="'Fråga: ' + ${session.question.question}"></p>
 
 <p th:text="'Fråga: ' + ${session.question.question}"></p>
 <form action="play" method="post">
