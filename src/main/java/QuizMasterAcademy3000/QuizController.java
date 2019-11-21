@@ -14,10 +14,12 @@ import javax.servlet.http.HttpSession;
 public class QuizController {
 
     Repository repo = new Repository();
+
     @GetMapping("/play")
     String home(HttpSession session) {
         Question q = QuizService.startPlay(repo);
         session.setAttribute("question", q);
+        session.setAttribute("progress", repo.getProgress());
         return "play";
     }
 

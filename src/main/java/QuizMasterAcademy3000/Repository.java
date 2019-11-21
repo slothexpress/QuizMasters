@@ -7,9 +7,16 @@ import java.util.concurrent.ThreadLocalRandom;
 public class Repository {
     private List<Question>questionList = new ArrayList<>();
     private List<Question>askedQuestionList = new ArrayList<>();
+    private int numberOfQuestions = 4; // TODO create a For loop in addQuestions to extract this amount of questions from database
+    private int progress;
 
     public Repository() {
         addQuestions();
+    }
+
+    public int getProgress() {
+        progress = (1 - ((questionList.size()-1)/numberOfQuestions))*100; // returns percentage for the progress bar
+        return progress;
     }
 
     public void addQuestions() {
