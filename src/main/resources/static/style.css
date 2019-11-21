@@ -27,6 +27,20 @@ img {
 
 
 body {
-
+    background-color: #dac463;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+div#endClass {
+background-color: #dac463;
+padding-top:50px;
+
+}
+
+div#endPoints {
+background-image: url(https://www.lagerhaus.se/pub_images/large/81847143.jpg);
+background-repeat: no-repeat;
+font-size: 200%;
+text-align: center;
+background-position: center;
 }

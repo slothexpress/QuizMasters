@@ -16,10 +16,11 @@ public class QuizController {
     Repository repo = new Repository();
 
     @GetMapping("/play")
-    String home(HttpSession session) {
+    String home(HttpSession session, Model model) {
         //Question q = new Question("","","","","","");
         Question q = QuizService.startPlay(repo);
         if(q==null) {
+            model.addAttribute("points", QuizService.getPoints());
             return "end";
         }
         session.setAttribute("question", q);
