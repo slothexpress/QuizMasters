@@ -55,7 +55,7 @@ public class Repository {
     }
 
     public Question generateRandomQuestion() {
-        if (this.questionList == null) {
+        if (this.questionList.size() == 0) {
             return null;
         }
         int randomNum = ThreadLocalRandom.current().nextInt(0, questionList.size());
