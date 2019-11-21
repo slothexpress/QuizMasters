@@ -32,6 +32,7 @@ public class QuizController {
         }
         session.setAttribute("question", q);
         session.setAttribute("progress", repo.getProgress());
+        session.setAttribute("test", "width: 90%");
         return "play";
     }
 

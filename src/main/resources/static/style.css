@@ -30,3 +30,7 @@ body {
 
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
+
+img {
+  cursor: url('https://img.icons8.com/clouds/64/000000/define-location.png'), auto;
+}
