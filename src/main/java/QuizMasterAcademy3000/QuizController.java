@@ -16,7 +16,11 @@ public class QuizController {
     Repository repo = new Repository();
     @GetMapping("/play")
     String home(HttpSession session) {
+        //Question q = new Question("","","","","","");
         Question q = QuizService.startPlay(repo);
+        if(q==null) {
+            return "end";
+        }
         session.setAttribute("question", q);
         return "play";
     }
@@ -28,13 +32,11 @@ public class QuizController {
         if (QuizService.checkAnswer(q, answer)) {
             model.addAttribute("answer", "correct");
             System.out.println("Poängen: " + QuizService.getPoints());
+            return "correct";
         } else {
             model.addAttribute("answer", "wrong");
+            return "wrong";
         }
-        return "play";
     }
-
-
-
 
 }
