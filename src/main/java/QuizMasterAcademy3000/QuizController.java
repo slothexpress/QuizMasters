@@ -18,9 +18,17 @@ public class QuizController {
     @GetMapping("/play")
     String home(HttpSession session) {
         //Question q = new Question("","","","","","");
+//        if ((repo.getQuestionList().size()) == 0) {
+//            repo = new Repository();
+//        }
         Question q = QuizService.startPlay(repo);
+
+        System.out.println("Frågor kvar " + repo.getQuestionList().size());
+
         if(q==null) {
+            repo = new Repository();
             return "end";
+
         }
         session.setAttribute("question", q);
         session.setAttribute("progress", repo.getProgress());
