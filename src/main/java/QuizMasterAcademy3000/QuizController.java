@@ -22,9 +22,7 @@ public class QuizController {
 //            repo = new Repository();
 //        }
         Question q = QuizService.startPlay(repo);
-
-        System.out.println("Frågor kvar " + repo.getQuestionList().size());
-
+        System.out.println("Frågor kvar: " + ((repo.getQuestionList().size())+1));
         if(q==null) {
             model.addAttribute("points", QuizService.getPoints());
             repo = new Repository();
@@ -32,8 +30,6 @@ public class QuizController {
 
         }
         session.setAttribute("question", q);
-        session.setAttribute("progress", repo.getProgress());
-        session.setAttribute("test", "width: 90%");
         return "play";
     }
 
@@ -43,10 +39,11 @@ public class QuizController {
         System.out.println("Svaret från användaren: " + answer);
         if (QuizService.checkAnswer(q, answer)) {
             model.addAttribute("answer", "correct");
-            System.out.println("Poängen: " + QuizService.getPoints());
+            System.out.println("Rätt svar, poäng just nu: " + QuizService.getPoints());
             return "correct";
         } else {
             model.addAttribute("answer", "wrong");
+            System.out.println("Rätt svar: " + q.getCorrectAnswer());
             return "wrong";
         }
     }
