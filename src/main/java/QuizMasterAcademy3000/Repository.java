@@ -32,7 +32,7 @@ public class Repository {
         Question question1 =new Question(question1Question,question1A1,question1A2,question1A3,question1A4,question1Correct);
 
         String question2Question = "Vilken är Samis favoritpotatis?";
-        String question2A1 = "Hederlig potatismos";
+        String question2A1 = "Hederligt potatismos";
         String question2A2 = "Hasselbackspotatis";
         String question2A3 = "Friterad potatis";
         String question2A4 = "Vitlöksslungad färskpotatis";
