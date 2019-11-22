@@ -18,13 +18,6 @@ public class Repository {
         System.out.println("Setting points to 0\n");
     }
 
-/*
-    public int getProgress() {
-        progress = (1 - ((questionList.size()-1)/ questionsPerRound))*100; // returns percentage for the progress bar
-        return progress;
-    }
-*/
-
     public int getQuestionsPerRound() {
         return questionsPerRound;
     }
