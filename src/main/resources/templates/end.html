@@ -6,12 +6,22 @@
     <link rel="stylesheet" href="../static/style.css" th:href="'/style.css'">
     <title>end</title>
 </head>
-<body>
-<div id="endPoints">
-        <h1 class="display-4">The End</h1>
-        <h1 th:text="'Your points are ' + ${points}"></h1>
+
+<body class="endbody">
+<div class="endPoints">
+    <br><br><br><br>
+        <h1 class="display-4">The Egg</h1>
+        <h1 th:text="'WOW'"></h1>
+
+    <h1 th:text="'You scored ' + ${points} + ' out of ' + ${session.totalquestions} + ' points!'"></h1>
+    <br><br>
+
     <a href="/">
-        <button type="button" class="btn btn-secondary btn-lg btn-block">Start over</button>
+        <button type="button" class="btn btn-secondary btn-lg btn-block">Start Over</button>
     </a>
+</div>
+<br>
+<img src="https://media.giphy.com/media/VCPN01ueXTI6cGDblk/giphy.gif" class="center">
+
 </body>
 </html>
