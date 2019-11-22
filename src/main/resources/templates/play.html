@@ -68,12 +68,15 @@ var x = setInterval(function() {
 
 <form action="play" method="post">
     <div class="playbuttons">
-        <button type="submit" class="btn btn-outline-primary btn-lg btn-block" th:text="'A: ' + ${session.question.answer1}" name="answer" th:value="${session.question.answer1}"></button>
+        <button id="buttonStyle" type="submit" class="btn btn-outline-primary btn-lg btn-block" th:text="'A: ' + ${session.question.answer1}" name="answer" th:value="${session.question.answer1}"><img src="https://media1.tenor.com/images/56b56daad40e1aff32f402a2988d5aec/tenor.gif?itemid=5458806"/></button>
         <button type="submit" class="btn btn-outline-success btn-lg btn-block" th:text="'B: ' + ${session.question.answer2}" name="answer" th:value="${session.question.answer2}"></button>
         <button type="submit" class="btn btn-outline-danger btn-lg btn-block" th:text="'C: ' + ${session.question.answer3}" name="answer" th:value="${session.question.answer3}"></button>
         <button type="submit" class="btn btn-outline-dark btn-lg btn-block" th:text="'D: ' + ${session.question.answer4}" name="answer" th:value="${session.question.answer4}"></button>
     </div>
 </form>
+
+
+
 
     <br>
     <p>Please remember that the time is ticking... <br> However, you should remain calm during the quiz to enjoy the game to the max.</p>
