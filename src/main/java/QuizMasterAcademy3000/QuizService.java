@@ -8,8 +8,8 @@ public class QuizService {
         return points;
     }
 
-    public void setPoints(int points) {
-        this.points = points;
+    public static void setPoints(int p) {
+        points = p;
     }
 
     public static Question startPlay(Repository repo) {
