@@ -41,7 +41,16 @@ font-size: 200%;
 text-align: center;
 h2-align: center;
 background-position: center;
+}
 
+.endPoints:hover {
+background-color: white;
+background-image: url("https://www.lagerhaus.se/pub_images/large/Maj-ss19_7.jpg");
+background-repeat: no-repeat;
+font-size: 200%;
+text-align: center;
+h2-align: center;
+background-position: center;
 }
 
 .endbody {
@@ -56,4 +65,10 @@ background-position: center;
 button {
   margin-top: 30px;
   margin-bottom: 30px;
+}
+
+
+
+.timer {
+font-size: 30px;
 }
