@@ -37,6 +37,18 @@ img:hover {
   cursor: url('https://img.icons8.com/clouds/64/000000/define-location.png'), auto;
 }
 
+#buttonStyle:hover img {
+    visibility:visible;
+    top:50; left:25px;
+    z-index:1;
+}
+
+#buttonStyle img {
+    position:absolute;
+    visibility:hidden;
+}
+
+
 .endPoints {
 background-color: white;
 background-image: url("https://www.lagerhaus.se/pub_images/large/81847143.jpg");
@@ -51,3 +63,5 @@ background-position: center;
 .endbody {
     background-color: #F995F8;
 }
+
+
