@@ -17,18 +17,20 @@
 </audio>
 
 <br>
-<div class="jumbotron jumbotron-fluid">
 
+
+<div class="jumbotron jumbotron-fluid">
 
 <h1 th:text="'FRÅGA ' + ${session.questionnow} + ' av ' + ${session.totalquestions}"></h1><br>
     <h1 th:text="${session.question.question}"></h1><br>
 
 <form action="play" method="post">
-
-    <button type="submit" class="btn btn-secondary btn-lg btn-block" th:text="'A: ' + ${session.question.answer1}" name="answer" th:value="${session.question.answer1}"></button>
-    <button type="submit" class="btn btn-primary btn-lg btn-block" th:text="'B: ' + ${session.question.answer2}" name="answer" th:value="${session.question.answer2}"></button>
-    <button type="submit" class="btn btn-secondary btn-lg btn-block" th:text="'C: ' + ${session.question.answer3}" name="answer" th:value="${session.question.answer3}"></button>
-    <button type="submit" class="btn btn-primary btn-lg btn-block" th:text="'D: ' + ${session.question.answer4}" name="answer" th:value="${session.question.answer4}"></button>
+    <div class="playbuttons">
+        <button type="submit" class="btn btn-outline-primary btn-lg btn-block" th:text="'A: ' + ${session.question.answer1}" name="answer" th:value="${session.question.answer1}"></button>
+        <button type="submit" class="btn btn-outline-success btn-lg btn-block" th:text="'B: ' + ${session.question.answer2}" name="answer" th:value="${session.question.answer2}"></button>
+        <button type="submit" class="btn btn-outline-danger btn-lg btn-block" th:text="'C: ' + ${session.question.answer3}" name="answer" th:value="${session.question.answer3}"></button>
+        <button type="submit" class="btn btn-outline-dark btn-lg btn-block" th:text="'D: ' + ${session.question.answer4}" name="answer" th:value="${session.question.answer4}"></button>
+    </div>
 </form>
 
     <br>

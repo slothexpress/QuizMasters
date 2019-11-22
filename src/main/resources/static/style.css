@@ -12,7 +12,6 @@ p {
     text-align:center;
 }
 
-
 .jumbotron {
     color: #eeeee;
     background-color: #dac463;
@@ -25,15 +24,12 @@ p {
   width: 40%;
 }
 
-
 body {
     background-color: #dac463;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
-
-
-img:hover {
+#startimage:hover {
   cursor: url('https://img.icons8.com/clouds/64/000000/define-location.png'), auto;
 }
 
@@ -52,3 +48,12 @@ background-position: center;
     background-color: #F995F8;
 }
 
+.playbuttons {
+  margin-left: 30px;
+  margin-right: 30px;
+}
+
+button {
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
