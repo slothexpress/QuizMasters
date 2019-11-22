@@ -17,10 +17,6 @@ public class QuizController {
 
     @GetMapping("/play")
     String home(HttpSession session, Model model) {
-        //Question q = new Question("","","","","","");
-//        if ((repo.getQuestionList().size()) == 0) {
-//            repo = new Repository();
-//        }
         Question q = QuizService.startPlay(repo);
         System.out.println("Frågor kvar: " + ((repo.getQuestionList().size())+1));
         if(q==null) {
@@ -30,6 +26,8 @@ public class QuizController {
 
         }
         session.setAttribute("question", q);
+        session.setAttribute("totalquestions", repo.getQuestionsPerRound());
+        session.setAttribute("questionnow", (repo.getQuestionsPerRound()-repo.getQuestionList().size()));
         return "play";
     }
 

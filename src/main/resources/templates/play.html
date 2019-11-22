@@ -13,15 +13,17 @@
 <body>
 
 
-<embed name="GoodEnough" src="Thinking.mp3" loop="false" hidden="true" autostart="true"> 
+<embed name="GoodEnough" src="Thinking.mp3" loop="false" hidden="true" autostart="true">
 
-
-<h1>TEST PLAY</h1>
+<br>
+<h1>Quiz Master 3000: Academy version</h1>
 
 <div class="jumbotron jumbotron-fluid">
-    <h1>Quiz Master 3000: Academy version</h1>
-    <p>Please remember that the time is ticking... <br> However, you should remain calm during the quiz to enjoy the game to the max.</p>
-<p th:text="'Fråga: ' + ${session.question.question}"></p><br>
+    <p>Please remember that the time is ticking... <br> However, you should remain calm during the quiz to enjoy the game to the max.</p><br>
+
+
+<h1 th:text="'FRÅGA ' + ${session.questionnow} + ' av ' + ${session.totalquestions}"></h1><br><br>
+    <h1 th:text="${session.question.question}"></h1><br>
 
 <form action="play" method="post">
 
