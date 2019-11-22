@@ -31,19 +31,19 @@ body {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
-div#endClass {
-background-color: #dac463;
-padding-top:50px;
+
 
 img:hover {
   cursor: url('https://img.icons8.com/clouds/64/000000/define-location.png'), auto;
 }
 
-div#endPoints {
-background-image: url(https://www.lagerhaus.se/pub_images/large/81847143.jpg);
+.endPoints {
+background-color: white;
+background-image: url("https://www.lagerhaus.se/pub_images/large/81847143.jpg");
 background-repeat: no-repeat;
 font-size: 200%;
 text-align: center;
 h2-align: center;
 background-position: center;
+
 }
