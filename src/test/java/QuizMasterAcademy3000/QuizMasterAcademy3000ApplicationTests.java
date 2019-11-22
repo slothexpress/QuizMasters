@@ -24,6 +24,6 @@ public class QuizMasterAcademy3000ApplicationTests {
     public void nextQuestionNew() throws ExecutionException {
         Repository sut = new Repository();
         int i = sut.getQuestionList().size();
-        Assert.assertEquals(4, i);
+        Assert.assertEquals(3, i);
     }
 }
