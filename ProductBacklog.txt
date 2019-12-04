@@ -1,0 +1,7 @@
+Product backlog QuizMaster
+
+*Skapa databas
+*Validering input
+*Skapa användare
+*Skapa highscore
+*Fler frågor (5 frågor var knutna till java)
