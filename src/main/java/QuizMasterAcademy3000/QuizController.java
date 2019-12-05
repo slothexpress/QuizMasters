@@ -15,6 +15,7 @@ public class QuizController {
 
     Repository repo = new Repository();
 
+
     @GetMapping("/play")
     String home(HttpSession session, Model model) {
         Question q = QuizService.startPlay(repo);
@@ -45,5 +46,18 @@ public class QuizController {
             return "wrong";
         }
     }
+
+
+    @GetMapping ("/register")
+    String register(Model model){
+        model.addAttribute("user", new User(null, "","",""));
+        return "register";
+    }
+
+    @PostMapping ("/register")
+    String registered(){
+        return "play";
+    }
+
 
 }
