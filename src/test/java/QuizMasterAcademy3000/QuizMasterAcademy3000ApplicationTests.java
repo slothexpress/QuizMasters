@@ -1,20 +1,21 @@
 package QuizMasterAcademy3000;
 
 import org.junit.Assert;
-import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
+import java.sql.SQLException;
 import java.util.concurrent.ExecutionException;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
 public class QuizMasterAcademy3000ApplicationTests {
+
+    @Autowired
+    private QuestionRepository1 repository;
 
     @Test
     public void contextLoads() {
@@ -22,8 +23,13 @@ public class QuizMasterAcademy3000ApplicationTests {
 
     @Test
     public void nextQuestionNew() throws ExecutionException {
-        Repository sut = new Repository();
+        QuestionRepository sut = new QuestionRepository();
         int i = sut.getQuestionList().size();
         Assert.assertEquals(3, i);
+    }
+
+    @Test
+    public void testSQLServer() throws SQLException {
+        Assert.assertTrue(repository.testDB());
     }
 }

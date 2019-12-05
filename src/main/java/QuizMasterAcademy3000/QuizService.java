@@ -12,7 +12,7 @@ public class QuizService {
         points = p;
     }
 
-    public static Question startPlay(Repository repo) {
+    public static Question startPlay(QuestionRepository repo) {
         Question q = repo.generateRandomQuestion();
         return q;
     }
