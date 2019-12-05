@@ -4,7 +4,6 @@ package QuizMasterAcademy3000;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
@@ -13,7 +12,7 @@ import javax.servlet.http.HttpSession;
 @Controller
 public class QuizController {
 
-    Repository repo = new Repository();
+    QuestionRepository repo = new QuestionRepository();
 
     @GetMapping("/play")
     String home(HttpSession session, Model model) {
@@ -21,7 +20,7 @@ public class QuizController {
         System.out.println("Frågor kvar: " + ((repo.getQuestionList().size())+1));
         if(q==null) {
             model.addAttribute("points", QuizService.getPoints());
-            repo = new Repository();
+            repo = new QuestionRepository();
             return "end";
 
         }

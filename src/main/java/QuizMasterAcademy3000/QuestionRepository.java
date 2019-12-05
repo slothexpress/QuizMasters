@@ -1,17 +1,28 @@
 package QuizMasterAcademy3000;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
+
+import javax.sql.DataSource;
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.ThreadLocalRandom;
 
-public class Repository {
+@Repository
+public class QuestionRepository {
+
+
     private List<Question>databaseQuestionsList= new ArrayList<>();
     private List<Question>questionList = new ArrayList<>();
     private List<Question>askedQuestionList = new ArrayList<>();
     private int questionsPerRound = 3; // TODO create a For loop in addQuestions to extract this amount of questions from database
     //private int progress;
 
-    public Repository() {
+    public QuestionRepository() {
         extractQuestionsFromDatabase();
         addQuestions();
         QuizService.setPoints(0);
@@ -21,6 +32,8 @@ public class Repository {
     public int getQuestionsPerRound() {
         return questionsPerRound;
     }
+
+
 
     public void extractQuestionsFromDatabase() {
         String question1Question = "Vilken är Sveriges huvudstad?";
