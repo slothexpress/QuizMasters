@@ -1,0 +1,11 @@
+﻿QuestionID;Question
+1;You need to reference a value stored in an array named B in row 7 column 3. Which syntax is correct within Java for finding the value of this variable?
+2;Which company now owns Java?
+3;Which of the following individuals is credited for first designing Java?
+4;Which keyword keeps the main method from returning any value to the caller?
+5;Within Java, each call to StdOut.println () does which of the following?
+6;According to Boolean operations, if !g is true, then which of the following applies?
+7;You are having a problem with the “if” logic in your code and need to utilize case conditions to create a number of possible execution paths. Which statement is necessary to accomplish this?
+8;At this point in time, which of the following is the officially supported version of Java?
+9;There are numerous ways of adding comments to code written in Java. Which of the following are accepted methods of signifying the beginning of comments within Java? (Choose all that apply)
+10;Within Java, you need to code your program so that under certain conditions it will skip the current iteration of a for loop. What can be used to accomplish this?

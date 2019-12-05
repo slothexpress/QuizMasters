@@ -1,0 +1,23 @@
+USE [Quiz]
+GO
+
+/****** Object:  Table [dbo].[User]    Script Date: 2019-12-05 14:00:46 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE TABLE [dbo].[User](
+	[UserID] [int] NOT NULL,
+	[Name] [nvarchar](50) NOT NULL,
+	[Email] [nvarchar](50) NOT NULL,
+	[HighScore] [int] NULL,
+	[LastScore] [int] NULL,
+ CONSTRAINT [PK_User] PRIMARY KEY CLUSTERED 
+(
+	[UserID] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+

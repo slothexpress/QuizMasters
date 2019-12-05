@@ -1,0 +1,48 @@
+﻿AnswerID;QuestionID;Answer;RightAnswer
+2;1;B[3,7];0
+3;1;B[3][7];0
+5;1;B[7,3];0
+6;1;"
+B[7][3]
+";1
+7;2;Apache Software Foundation;0
+11;2;PeopleSoft Inc.;0
+13;2;"
+Oracle Corporation";1
+14;2;SAP;0
+15;3;Ian Sheeler;0
+16;3;James Gosling;1
+17;3;Jim LeValley;0
+18;3;Tim Ritchey;0
+19;4;restricted;0
+20;4;concealed;0
+21;4;"void
+";1
+22;4;exclusive;0
+23;5;Reads and then prints the contents of the current file;0
+24;5;Appends text to the end of the file;1
+25;5;Prints the contents of the current file;0
+26;5;Overwrites the current contents of the file;0
+27;6;If g is false, and false otherwise;0
+28;6;If g is true, and false otherwise;1
+29;6;If g is false, and true otherwise;0
+30;6;If g is true, and true otherwise;0
+31;7;switch;1
+32;7;swap;0
+33;7;task;0
+34;7;instance;0
+35;8;Java 9;0
+36;8;Java 8;1
+37;8;Java 6.5;0
+38;8;Java 6;0
+39;8;Java 7;0
+40;9;//;1
+41;9;/#;0
+42;9;#;0
+43;9;/*;1
+44;9;/**;1
+45;9;*;0
+46;10;skip;0
+47;10;jump;0
+48;10;continue;1
+49;10;swipe;0
