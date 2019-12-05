@@ -6,12 +6,12 @@
 </head>
 <body>
 
-<form action="/play" method="POST" th:object="${user}">
+<form action="/register" method="POST" th:object="${user}">
 
-    <input type="hidden" th:if="${user != null}" th:field="*{id}"/>
-    Username<input type="text" th:field="*{name}"/>
-    Email<input type="email" th:field="*{email}"/>
-    Password<input type="password" th:field="*{password}"/>
+    <input type="hidden" th:if="${user != null}" th:field="*{id}"/><br>
+    Username<input type="text" th:field="*{name}"/><br>
+    Email<input type="email" th:field="*{email}"/><br>
+    Password<input type="password" th:field="*{password}"/><br>
 
     <input type="submit" value="Save"/>
 

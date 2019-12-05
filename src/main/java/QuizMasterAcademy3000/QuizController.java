@@ -57,7 +57,7 @@ public class QuizController {
     @PostMapping ("/register")
     String registered(Model model, @ModelAttribute User user){
         model.addAttribute("user", user);
-        return "play";
+        return "../static/index";
     }
 
 
