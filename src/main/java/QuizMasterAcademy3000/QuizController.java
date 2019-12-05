@@ -55,7 +55,8 @@ public class QuizController {
     }
 
     @PostMapping ("/register")
-    String registered(){
+    String registered(Model model, @ModelAttribute User user){
+        model.addAttribute("user", user);
         return "play";
     }
 
