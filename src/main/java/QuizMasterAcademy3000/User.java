@@ -10,11 +10,13 @@ public class User {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY) // Primary key
-    Long id;
+    private Long id;
 
-    String name;
-    String email;
-    String password;
+    private String name;
+    private String email;
+    private String password;
+    private int highscore;
+    private int mostRecentScore;
 
     public User(Long id, String name, String email, String password) {
         this.id = id;
@@ -55,7 +57,25 @@ public class User {
         this.password = password;
     }
 
+    public int getHighscore() {
+        return highscore;
+    }
+
+    public void setHighscore(int highscore) {
+        this.highscore = highscore;
+    }
+
+    public int getMostRecentScore() {
+        return mostRecentScore;
+    }
+
+    public void setMostRecentScore(int mostRecentScore) {
+        this.mostRecentScore = mostRecentScore;
+    }
+
     public User() {
 
     }
+
+
 }

@@ -2,6 +2,7 @@ package QuizMasterAcademy3000;
 
 public class QuizService {
 
+    private static int totalPoints = 0;
     private static int points = 0;
 
     public static int getPoints() {
@@ -26,5 +27,12 @@ public class QuizService {
         }
     }
 
+    public static int getTotalPoints() {
+        return totalPoints;
+    }
+
+    public static void setTotalPoints(int totalPoints) {
+        QuizService.totalPoints = totalPoints;
+    }
 }
 

@@ -21,6 +21,7 @@ public class QuizController {
         Question q = QuizService.startPlay(repo);
         System.out.println("Frågor kvar: " + ((repo.getQuestionList().size())+1));
         if(q==null) {
+            QuizService.setTotalPoints(QuizService.getPoints());
             model.addAttribute("points", QuizService.getPoints());
             repo = new QuestionRepository();
             return "end";
@@ -39,7 +40,13 @@ public class QuizController {
         if (QuizService.checkAnswer(q, answer)) {
             model.addAttribute("answer", "correct");
             System.out.println("Rätt svar, poäng just nu: " + QuizService.getPoints());
+            if(repo.getQuestionsPerRound()-repo.getQuestionList().size()==0) {
+                int totalScore = QuizService.getPoints();
+                System.out.println("TotalScore "+totalScore);
+                session.setAttribute("totalScore", totalScore);
+            }
             return "correct";
+
         } else {
             model.addAttribute("answer", "wrong");
             System.out.println("Rätt svar: " + q.getCorrectAnswer());
@@ -49,15 +56,18 @@ public class QuizController {
 
 
     @GetMapping ("/register")
-    String register(Model model){
+    String register(Model model, HttpSession session){
         model.addAttribute("user", new User(null, "","",""));
         return "register";
     }
 
     @PostMapping ("/register")
-    String registered(Model model, @ModelAttribute User user){
+    String registered(HttpSession session, Model model, @ModelAttribute User user){
         model.addAttribute("user", user);
-        return "../static/index";
+        //return "../static/index";
+        user.setMostRecentScore(QuizService.getTotalPoints());
+        //System.out.println(user.getName()+" "+user.getMostRecentScore()+ " "+ user.getEmail());
+        return "play";
     }
 
 
