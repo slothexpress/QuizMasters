@@ -8,6 +8,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
 import java.sql.SQLException;
+import java.util.List;
 import java.util.concurrent.ExecutionException;
 
 @RunWith(SpringRunner.class)
@@ -22,7 +23,7 @@ public class QuizMasterAcademy3000ApplicationTests {
     }
 
     @Test
-    public void nextQuestionNew() throws ExecutionException {
+    public void nextQuestionNew() throws ExecutionException, SQLException {
         QuestionRepository sut = new QuestionRepository();
         int i = sut.getQuestionList().size();
         Assert.assertEquals(3, i);
@@ -31,5 +32,11 @@ public class QuizMasterAcademy3000ApplicationTests {
     @Test
     public void testSQLServer() throws SQLException {
         Assert.assertTrue(repository.testDB());
+    }
+
+    @Test
+    public void testQuestionsCount() throws SQLException {
+        List<Question> questions = repository.extractQuestionsFromDb();
+        Assert.assertEquals(10, questions.size());
     }
 }
