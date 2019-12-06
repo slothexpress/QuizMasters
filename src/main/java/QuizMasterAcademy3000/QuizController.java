@@ -3,12 +3,14 @@ package QuizMasterAcademy3000;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import javax.servlet.http.HttpSession;
+import javax.validation.Valid;
 
 @Controller
 public class QuizController {
@@ -62,13 +64,24 @@ public class QuizController {
     }
 
     @PostMapping ("/register")
-    String registered(HttpSession session, Model model, @ModelAttribute User user){
+    String registered(@Valid User userValidation, BindingResult result, HttpSession session, Model model, @ModelAttribute User user){
+//        UserValidator uv = new UserValidator();
+        if (result.hasErrors()) {
+            return "register";
+        }
         model.addAttribute("user", user);
         //return "../static/index";
         user.setMostRecentScore(QuizService.getTotalPoints());
         //System.out.println(user.getName()+" "+user.getMostRecentScore()+ " "+ user.getEmail());
-        return "play";
+        return "saved";
     }
 
-
+//    @PostMapping("")
+//    public String userValidate(@Valid User user, BindingResult result) {
+//        if (result.hasErrors()) {
+//            return "";
+//        }
+//        save(user);
+//        return "";
+//    }
 }

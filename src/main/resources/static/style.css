@@ -84,3 +84,15 @@ button {
 .timer {
 font-size: 30px;
 }
+
+.error{
+border-style:solid;
+border-color: red;
+}
+
+.form{
+display: block;
+margin-left: auto;
+margin-right: auto;
+width: 60%;
+}

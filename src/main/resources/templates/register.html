@@ -1,20 +1,28 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
-    <meta charset="UTF-8">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="../static/style.css" th:href="'/style.css'">
     <title>Register an account</title>
 </head>
 <body>
-
+<div class="form">
 <form action="/register" method="POST" th:object="${user}">
-
+<br>
     <input type="hidden" th:if="${user != null}" th:field="*{id}"/><br>
-    Username<input type="text" th:field="*{name}"/><br>
-    Email<input type="email" th:field="*{email}"/><br>
-    Password<input type="password" th:field="*{password}"/><br>
+    Username <br><input type="text" th:field="*{name}" th:errorclass = "error"/><br> <br>
+    Email <br><input type="email" th:field="*{email}"th:errorclass = "error"/><br><br>
+    Password <br><input type="password" th:field="*{password}"th:errorclass = "error"/><br><br>
     <input type="submit" value="Save"/>
+    <p th:if = "${#fields.hasErrors('name')}">Invalid username (>4 char)!</p>
+    <p th:if = "${#fields.hasErrors('email')}">Invalid email!</p>
+    <p th:if = "${#fields.hasErrors('password')}">Invalid password!</p>
+
 
 </form>
-
+</div>
 </body>
 </html>

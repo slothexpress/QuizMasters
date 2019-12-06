@@ -1,4 +1,4 @@
-package QuizMasterAcademy3000;
+/*package QuizMasterAcademy3000;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
@@ -72,4 +72,4 @@ public class QuestionRepository1 {
                             rs.getBoolean(4));
     }
 
-}
+}*/

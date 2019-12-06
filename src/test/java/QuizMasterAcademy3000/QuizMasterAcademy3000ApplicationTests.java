@@ -16,7 +16,7 @@ import java.util.concurrent.ExecutionException;
 public class QuizMasterAcademy3000ApplicationTests {
 
     @Autowired
-    private QuestionRepository1 repository;
+//    private QuestionRepository1 repository;
 
     @Test
     public void contextLoads() {
@@ -27,16 +27,16 @@ public class QuizMasterAcademy3000ApplicationTests {
         QuestionRepository sut = new QuestionRepository();
         int i = sut.getQuestionList().size();
         Assert.assertEquals(3, i);
-    }
+    }}
 
-    @Test
-    public void testSQLServer() throws SQLException {
-        Assert.assertTrue(repository.testDB());
-    }
-
-    @Test
-    public void testQuestionsCount() throws SQLException {
-        List<Question> questions = repository.extractQuestionsFromDb();
-        Assert.assertEquals(10, questions.size());
-    }
-}
+//    @Test
+//    public void testSQLServer() throws SQLException {
+//        Assert.assertTrue(repository.testDB());
+//    }
+//
+//    @Test
+//    public void testQuestionsCount() throws SQLException {
+//        List<Question> questions = repository.extractQuestionsFromDb();
+//        Assert.assertEquals(10, questions.size());
+//    }
+//}
