@@ -16,6 +16,7 @@ public class QuizController {
 
     QuestionRepository repo = new QuestionRepository();
 
+
     public QuizController() throws SQLException {
     }
 
@@ -29,7 +30,6 @@ public class QuizController {
             model.addAttribute("points", QuizService.getPoints());
             repo = new QuestionRepository();
             return "end";
-
         }
         session.setAttribute("question", q);
         session.setAttribute("totalquestions", repo.getQuestionsPerRound());

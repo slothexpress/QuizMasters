@@ -43,8 +43,12 @@ public class QuizMasterAcademy3000ApplicationTests {
     @Test
     public void testJDBC() throws SQLException {
         List<Question> questions=repository.extractQuestionsFromDb();
-        for(Question q:questions) {
+        for (Question q : questions) {
             System.out.println(q.getQuestion());
+            System.out.println(q.getAnswer1());
+            System.out.println(q.getAnswer2());
+            System.out.println(q.getAnswer3());
+            System.out.println(q.getAnswer4());
         }
     }
 }
