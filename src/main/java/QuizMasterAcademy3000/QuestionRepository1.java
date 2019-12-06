@@ -66,10 +66,9 @@ public class QuestionRepository1 {
                             if(rs.getByte(6)==1) {
                                 question.setCorrectAnswer(rs.getString(5));
                             }
-                            questions.add(question);
-                            questionsLister.add(question);
-                            question = new Question("","","","","","");
-                            //System.out.println(question.getQuestion());
+                            questions.add(question);//Skriver över tidigare objektreferenser?
+                            question = new Question("", "", "", "", "", "");
+
                         }
                     }
                 }
