@@ -1,12 +1,28 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.springframework.org/schema/data/jaxb">
 <head>
-    <meta charset="UTF-8">
-    <title>User Save</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="../static/style.css" th:href="'/style.css'">
+
+    <title>Validated!</title>
 </head>
 <body>
 
-<h1> Saving page</h1>
+<br>
+<h1> Your score has been saved!</h1>
+
+<!-- Quiz Master 2.0: saving user high score in database
+<h2 th:text="'Your highest score ' + ${session.highestscore}"> Highest score: </h2>-->
+
+<h2 th:text="'Most recent score ' + ${session.recentscore}"> Most recent score: </h2>
+
+<a href="/play">
+    <button type="button" class="btn btn-info btn-lg btn-block">Play again!</button>
+</a>
+
 
 </body>
 </html>

@@ -19,7 +19,7 @@ public class User {
     private String email;
     @Size(min=8, max = 80)
     private String password;
-    private int highscore;
+    private int highScore;
     private int mostRecentScore;
 
     public User(Long id, String name, String email, String password) {
@@ -61,12 +61,12 @@ public class User {
         this.password = password;
     }
 
-    public int getHighscore() {
-        return highscore;
+    public int getHighScore() {
+        return highScore;
     }
 
-    public void setHighscore(int highscore) {
-        this.highscore = highscore;
+    public void setHighScore(int highScore) {
+        this.highScore = highScore;
     }
 
     public int getMostRecentScore() {

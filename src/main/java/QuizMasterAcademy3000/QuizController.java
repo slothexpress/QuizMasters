@@ -72,16 +72,9 @@ public class QuizController {
         model.addAttribute("user", user);
         //return "../static/index";
         user.setMostRecentScore(QuizService.getTotalPoints());
-        //System.out.println(user.getName()+" "+user.getMostRecentScore()+ " "+ user.getEmail());
+
+        session.setAttribute("recentscore", user.getMostRecentScore());
         return "saved";
     }
 
-//    @PostMapping("")
-//    public String userValidate(@Valid User user, BindingResult result) {
-//        if (result.hasErrors()) {
-//            return "";
-//        }
-//        save(user);
-//        return "";
-//    }
 }
