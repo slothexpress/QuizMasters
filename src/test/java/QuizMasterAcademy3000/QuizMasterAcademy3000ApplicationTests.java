@@ -29,14 +29,35 @@ public class QuizMasterAcademy3000ApplicationTests {
         Assert.assertEquals(3, i);
     }}
 
-//    @Test
-//    public void testSQLServer() throws SQLException {
-//        Assert.assertTrue(repository.testDB());
-//    }
-//
-//    @Test
-//    public void testQuestionsCount() throws SQLException {
-//        List<Question> questions = repository.extractQuestionsFromDb();
-//        Assert.assertEquals(10, questions.size());
-//    }
-//}
+    @Test
+    public void testSQLServer() throws SQLException {
+        Assert.assertTrue(repository.testDB());
+    }
+
+    @Test
+    public void testQuestionsCount() throws SQLException {
+        List<Question> questions = repository.extractQuestionsFromDb();
+        Assert.assertEquals(10, questions.size());
+    }
+
+    @Test
+    public void testJDBC() throws SQLException {
+        List<Question> questions=repository.extractQuestionsFromDb();
+        for (int i = 0; i < questions.size(); i++) {
+            System.out.println(questions.get(i).getQuestion());
+
+        }
+
+    }
+}
+    @Test
+    public void testSQLServer() throws SQLException {
+        Assert.assertTrue(repository.testDB());
+    }
+
+    @Test
+    public void testQuestionsCount() throws SQLException {
+        List<Question> questions = repository.extractQuestionsFromDb();
+        Assert.assertEquals(10, questions.size());
+    }
+}
