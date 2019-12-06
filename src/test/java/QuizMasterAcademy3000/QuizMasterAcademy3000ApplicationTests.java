@@ -39,4 +39,12 @@ public class QuizMasterAcademy3000ApplicationTests {
         List<Question> questions = repository.extractQuestionsFromDb();
         Assert.assertEquals(10, questions.size());
     }
+
+    @Test
+    public void testJDBC() throws SQLException {
+        List<Question> questions=repository.extractQuestionsFromDb();
+        for(Question q:questions) {
+            System.out.println(q.getQuestion());
+        }
+    }
 }

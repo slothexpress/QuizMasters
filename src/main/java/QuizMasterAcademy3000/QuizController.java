@@ -9,15 +9,19 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import javax.servlet.http.HttpSession;
+import java.sql.SQLException;
 
 @Controller
 public class QuizController {
 
     QuestionRepository repo = new QuestionRepository();
 
+    public QuizController() throws SQLException {
+    }
+
 
     @GetMapping("/play")
-    String home(HttpSession session, Model model) {
+    String home(HttpSession session, Model model) throws SQLException {
         Question q = QuizService.startPlay(repo);
         System.out.println("Frågor kvar: " + ((repo.getQuestionList().size())+1));
         if(q==null) {

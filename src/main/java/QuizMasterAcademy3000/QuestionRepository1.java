@@ -35,9 +35,40 @@ public class QuestionRepository1 {
         List<Question> questions = new ArrayList<>();
             try (Connection con = dataSource.getConnection();
                 Statement stmt = con.createStatement();
-                ResultSet rs = stmt.executeQuery("SELECT * FROM QUESTIONS")){
+                ResultSet rs = stmt.executeQuery("SELECT * FROM QUESTIONS JOIN ANSWERS ON QUESTIONS.QUESTIONID=ANSWERS.QUESTIONID ORDER BY QUESTIONS.QUESTIONID")){
+                Question question = new Question("", "","","","","");
                 while (rs.next()) {
-                    questions.add(rsQuestion(rs));
+                    //Question question = new Question("", "","","","","");
+                    if(!question.getQuestion().equalsIgnoreCase(rs.getString(2))) {
+                        question.setQuestion(rs.getString(2));
+                        question.setAnswer1(rs.getString(5));
+                        question.setAnswer2("");
+                        question.setAnswer3("");
+                        question.setAnswer4("");
+                        question.setCorrectAnswer("");
+                        if(rs.getByte(6)==1) {
+                            question.setCorrectAnswer(rs.getString(5));
+                        }
+                    } else {
+                        if(question.getAnswer2().equalsIgnoreCase("")) {
+                            question.setAnswer2(rs.getString(5));
+                            if(rs.getByte(6)==1) {
+                                question.setCorrectAnswer(rs.getString(5));
+                            }
+
+                        } else if(question.getAnswer3().equalsIgnoreCase("")) {
+                            question.setAnswer3(rs.getString(5));
+                            if(rs.getByte(6)==1) {
+                                question.setCorrectAnswer(rs.getString(5));
+                            }
+                        } else if(question.getAnswer4().equalsIgnoreCase("")) {
+                            question.setAnswer4(rs.getString(5));
+                            if(rs.getByte(6)==1) {
+                                question.setCorrectAnswer(rs.getString(5));
+                            }
+                            questions.add(question);
+                        }
+                    }
                 }
             } catch (SQLException e) {
                 e.printStackTrace();
@@ -60,10 +91,10 @@ public class QuestionRepository1 {
         return answers;
     }
 
-    private Question rsQuestion(ResultSet rs) throws SQLException {
-        return new Question(rs.getInt(1),
-                            rs.getString(2));
-    }
+//    private Question rsQuestion(ResultSet rs) throws SQLException {
+//        return new Question(rs.getInt(1),
+//                            rs.getString(2));
+//    }
 
     private Answer rsAnswer(ResultSet rs) throws SQLException {
             return new Answer(rs.getInt(1),

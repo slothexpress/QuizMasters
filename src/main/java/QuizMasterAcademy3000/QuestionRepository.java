@@ -22,7 +22,10 @@ public class QuestionRepository {
     private int questionsPerRound = 3; // TODO create a For loop in addQuestions to extract this amount of questions from database
     //private int progress;
 
-    public QuestionRepository() {
+    @Autowired
+    QuestionRepository1 repository1;
+
+    public QuestionRepository() throws SQLException {
         extractQuestionsFromDatabase();
         addQuestions();
         QuizService.setPoints(0);
@@ -35,7 +38,7 @@ public class QuestionRepository {
 
 
 
-    public void extractQuestionsFromDatabase() {
+    public void extractQuestionsFromDatabase() throws SQLException {
         String question1Question = "Vilken är Sveriges huvudstad?";
         String question1A1 = "Stockholm";
         String question1A2 = "Malmö";
@@ -90,6 +93,7 @@ public class QuestionRepository {
         databaseQuestionsList.add(question4);
         databaseQuestionsList.add(question5);
         databaseQuestionsList.add(question6);
+        //databaseQuestionsList=repository1.extractQuestionsFromDb();
 
         System.out.println("------\nExtracted questions from database\n-------");
     }
