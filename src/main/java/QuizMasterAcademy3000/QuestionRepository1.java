@@ -14,6 +14,7 @@ import java.util.List;
 
 @Repository
 public class QuestionRepository1 {
+    public static List<Question>questionsLister = new ArrayList<>();
 
     @Autowired
     private DataSource dataSource;
@@ -38,8 +39,7 @@ public class QuestionRepository1 {
                 ResultSet rs = stmt.executeQuery("SELECT * FROM QUESTIONS JOIN ANSWERS ON QUESTIONS.QUESTIONID=ANSWERS.QUESTIONID ORDER BY QUESTIONS.QUESTIONID")){
                 Question question = new Question("", "","","","","");
                 while (rs.next()) {
-                    //Question question = new Question("", "","","","","");
-                    if(!question.getQuestion().equalsIgnoreCase(rs.getString(2))) {
+                    if(!(question.getQuestion().equalsIgnoreCase(rs.getString(2)))) {
                         question.setQuestion(rs.getString(2));
                         question.setAnswer1(rs.getString(5));
                         question.setAnswer2("");
@@ -67,6 +67,9 @@ public class QuestionRepository1 {
                                 question.setCorrectAnswer(rs.getString(5));
                             }
                             questions.add(question);
+                            questionsLister.add(question);
+                            question = new Question("","","","","","");
+                            //System.out.println(question.getQuestion());
                         }
                     }
                 }
