@@ -13,6 +13,8 @@ import java.util.List;
 import java.util.concurrent.ThreadLocalRandom;
 
 public class QuestionRepository {
+    @Autowired
+    QuestionRepository1 repository1;
 
 
     private List<Question>databaseQuestionsList= new ArrayList<>();
@@ -124,4 +126,6 @@ public class QuestionRepository {
         askedQuestionList.add(this.questionList.get(randomNum));
         return this.questionList.remove(randomNum);
     }
+
+
 }

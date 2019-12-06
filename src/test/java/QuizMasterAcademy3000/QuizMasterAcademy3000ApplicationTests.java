@@ -50,5 +50,6 @@ public class QuizMasterAcademy3000ApplicationTests {
             System.out.println(q.getAnswer3());
             System.out.println(q.getAnswer4());
         }
+
     }
 }
